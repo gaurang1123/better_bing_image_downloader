@@ -220,7 +220,7 @@ class Bing:
                     + '&first=' + str(page_counter * page_size)
                     + '&count=' + str(page_size)
                     + '&adlt=' + self.adult
-                    + '&qft=' + ('' if self.filter is None else self.get_filter(self.filter))
+                    + '&qft=' + ('+filterui:imagesize-large' if self.filter is None else self.get_filter(self.filter) + '+filterui:imagesize-large')
                 )
                 
                 request = urllib.request.Request(request_url, None, headers=self.headers)
